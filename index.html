@@ -1,1 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kaynox | Portafolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --blue:#1e4bff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --bg:#ffffff;
+  --card:#f8fafc;
+  --border:#e5e7eb;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'JetBrains Mono', monospace;
+}
+
+html { scroll-behavior:smooth; }
+
+body {
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* NAV */
+nav {
+  position:fixed;
+  top:0;
+  width:100%;
+  background:white;
+  border-bottom:1px solid var(--border);
+  z-index:100;
+}
+
+nav ul {
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  padding:20px;
+  list-style:none;
+}
+
+nav a {
+  font-size:14px;
+  text-decoration:none;
+  color:var(--text);
+}
+
+nav a:hover { color:var(--blue); }
+
+/* HERO */
+.hero {
+  max-width:1200px;
+  margin:160px auto 120px;
+  padding:0 20px;
+}
+
+.hero small {
+  font-size:18px;
+  color:var(--muted);
+}
+
+.hero h1 {
+  font-size:80px;
+  margin:20px 0;
+}
+
+.hero span { color:var(--blue); }
+
+.hero p { color:var(--muted); }
+
+.socials {
+  margin-top:30px;
+  display:flex;
+  gap:20px;
+}
+
+.socials a { font-size:22px; }
+
+/* SECTIONS */
+section {
+  max-width:1200px;
+  margin:120px auto;
+  padding:0 20px;
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:60px;
+}
+
+section h2 {
+  font-size:48px;
+  position:relative;
+}
+
+section h2::after {
+  content:"";
+  width:60px;
+  height:4px;
+  background:var(--blue);
+  position:absolute;
+  left:0;
+  bottom:-10px;
+}
+
+/* ABOUT */
+.about-text {
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.tags {
+  margin-top:20px;
+  display:flex;
+  gap:10px;
+}
+
+.tag {
+  background:#f1f5f9;
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:13px;
+}
+
+/* CARD */
+.card {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:30px;
+  position:relative;
+  opacity:0;
+  transform:translateY(30px);
+  transition:.6s;
+}
+
+.card.show {
+  opacity:1;
+  transform:translateY(0);
+}
+
+.card small { color:var(--blue); }
+
+.card p { color:var(--muted); }
+
+.stack {
+  margin-top:15px;
+  display:flex;
+  gap:10px;
+}
+
+.stack span {
+  background:#020617;
+  color:white;
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:12px;
+}
+
+.arrow {
+  position:absolute;
+  top:20px;
+  right:20px;
+  width:40px;
+  height:40px;
+  background:#020617;
+  color:white;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+/* TIMELINE */
+.timeline { position:relative; }
+
+.timeline::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:50%;
+  width:2px;
+  height:100%;
+  background:var(--border);
+}
+
+.dot {
+  width:14px;
+  height:14px;
+  background:var(--blue);
+  border-radius:50%;
+  position:absolute;
+  left:calc(50% - 7px);
+  top:40px;
+}
+
+.right {
+  margin-left:auto;
+  width:90%;
+}
+
+.date {
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* FOOTER */
+footer {
+  border-top:1px solid var(--border);
+  padding:30px;
+  text-align:center;
+  font-weight:600;
+}
+
+@media(max-width:900px){
+  section { grid-template-columns:1fr; }
+  .timeline::before { left:0; }
+  .dot { left:-6px; }
+  .right { width:100%; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+<ul>
+  <li><a href="#about">About</a></li>
+  <li><a href="#projects">Projects</a></li>
+  <li><a href="#experience">Experience</a></li>
+  <li><a href="#education">Education</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<div class="hero">
+  <small>Hello! 👋</small>
+  <h1>I'm <span>Kaynox</span></h1>
+  <p>I'm a New Developer.</p>
+
+  <div class="socials">
+    <a href="https://github.com/Kynox3321" target="_blank">⌂</a>
+  </div>
+</div>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div>
+    <p class="about-text">
+      Hi, im Kaynox. A new person of the world of developing.
+      I don't like courses, im going like the air.
+    </p>
+    <div class="tags">
+      <div class="tag">JavaScript</div>
+      <div class="tag">PHP</div>
+      <div class="tag">Docker</div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="card">
+    <small>01</small>
+    <h3>DexlunMC Network</h3>
+    <p>A Geyser minecraft server that is in development</p>
+    <div class="stack">
+      <span>Python</span>
+    </div>
+    <div class="arrow" onclick="openProject()">↗</div>
+  </div>
+</section>
+
+<!-- EXPERIENCE (MISMO TODO, SOLO TEXTO CAMBIADO) -->
+<section id="experience" class="timeline">
+  <h2>Experience</h2>
+  <div class="dot"></div>
+
+  <div class="card right">
+    <span class="date">Present</span>
+    <h3>Starting</h3>
+    <small>New</small>
+    <p>• I'm new to development and still learning the basics by doing small projects.</p>
+  </div>
+</section>
+
+<!-- EDUCATION (MISMO TODO, SOLO TEXTO CAMBIADO) -->
+<section id="education" class="timeline">
+  <h2>Education</h2>
+  <div class="dot"></div>
+
+  <div class="card right">
+    <span class="date">Present</span>
+    <h3>Developing</h3>
+    <small>Only Me</small>
+    <p>• I didn't start university, I'm learning development on my own.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card show">
+    <p>💬 Discord: <strong>zerox0_o</strong></p>
+  </div>
+</section>
+
+<footer>Kaynox ● Portafolio</footer>
+
+<script>
+function openProject() {
+  window.open("https://example.com", "_blank");
+}
+
+const cards = document.querySelectorAll('.card');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+},{ threshold:0.2 });
+
+cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>
